@@ -1,0 +1,27 @@
+.navbar {
+    padding: 0.2rem 1rem;
+    background-color: var(--primary-color);
+}
+
+.heading-title-icon {
+    width: 90%;
+}
+.navigation {
+    width: 10%;
+}
+ul {
+    list-style-type: none;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+ul a {
+    text-decoration: none;
+}
+
+h1,
+ul a
+ {
+    color: #fff;
+}
+

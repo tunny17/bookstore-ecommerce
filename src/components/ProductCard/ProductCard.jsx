@@ -1,26 +1,35 @@
 import React from 'react'
+import './ProductCard.css'
+import { AiFillStar } from 'react-icons/ai'
 
-const ProductCard = () => {
+const ProductCard = ({product}) => {
+
+    const { id, name, image, discount, oldPrice, newPrice, rating  } = product
+
   return (
     <div>
         <div class="card card-vertical d-flex direction-column relative shadow">
             <div class="card-image-container">
-                <img class="card-image" src="/assets/shoes.jpg" alt="shoes" />
+                <img class="card-image" src={image} alt="shoes" />
             </div>
             <div class="card-details">
-                <div class="card-title">Premium Collection</div>
+                <div class="card-title">{name}</div>
                 <div class="card-description">
-                    <p class="card-des">Men Sneakers</p>
-                    <p class="card-price">
-                        Rs. 1750
-                        <span class="price-strike-through">Rs. 2499</span>
-                        <span class="discount">(30% OFF)</span>
+                    <p class="card-price    d-flex align-end">
+                        Rs. {newPrice}
+                        <span class="price-strike-through">Rs. {oldPrice}</span>
+                        <span class="discount">({discount}% OFF)</span>
+                    </p>
+                    <p  className='d-flex  align-center'>
+                        <span   className='star-icon'>
+                            <AiFillStar />
+                        </span>
+                        {rating}
                     </p>
                 </div>
                 <div class="cta-btn">
-                    <button class="button btn-primary btn-icon cart-btn d-flex   align-center justify-center gap cursor btn-margin">
-                    <img src="/assets/cart-white.png" alt="cart" /> 
-                        Add To Cart
+                    <button class="button btn-primary btn-icon cart-btn d-flex   align-center justify-center gap cursor btn-margin"> 
+                        Add To Cart 
                     </button>
                 </div>
             </div>
