@@ -1,0 +1,33 @@
+.card-horizontal {
+    width: 680px;
+    height: 12rem;
+    background-color: var(--card-background);
+    border-radius: 4px;
+}
+
+.card-hori-image-container {
+    width: 250px;
+    height: 100%;
+}
+
+.count {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: 2rem;
+    line-height: 0.3rem;
+}
+
+.count:hover {
+    cursor: pointer;
+}
+
+.q-title {
+    font-weight: 700;
+}
+
+.quantity-container {
+    margin-top: 1rem;
+}

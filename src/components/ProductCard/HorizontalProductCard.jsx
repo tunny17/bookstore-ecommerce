@@ -1,34 +1,53 @@
 import React from 'react'
+import './HorizontalProductCard.css'
+import { useCart } from '../../context/cart-context'
 
-export const HorizontalProductCard = () => {
+export const HorizontalProductCard = ({product}) => {
+
+  const { id, name, image, discount, oldPrice, newPrice, rating, quantity  } = product;
+
+  const { cartDispatch } = useCart();
+
+  const handleIncrement = (id) => {
+    cartDispatch({
+        type: 'INCREMENT',
+        payload: id
+    })
+  }
+
+  const handleDecrement = (id) => {
+    cartDispatch({
+        type: 'DECREMENT',
+        payload: id
+    })
+  }
+
   return (
-    <div class="card-horizontal d-flex shadow">
-        <div class="card-hori-image-container relative">
-            <img class="card-image" src="/assets/shoes.jpg" alt="shoes" />
-            <small class="c-badge bg-primary absolute left-0">Trending</small>
+    <div className="card-horizontal d-flex shadow">
+        <div className="card-hori-image-container relative">
+            <img className="card-image" src={image} alt="shoes" />
         </div>
-        <div class="card-details d-flex direction-column">
-            <div class="card-title">Premium Collection</div>
-            <div class="card-description">
-                <p class="card-des">Men Sneakers</p>
-                <p class="card-price">Rs. 1750<span class="price-strike-through padding-all-8">Rs. 2499</span>
-                    <span class="discount padding-all-8">(30% OFF)</span>
+        <div className="card-details d-flex direction-column">
+            <div className="card-title">{name}</div>
+            <div className="card-description">
+                <p className="card-price">Rs. {newPrice}<span className="price-strike-through padding-all-8">Rs. {oldPrice}</span>
+                    <span className="discount padding-all-8">({discount}% OFF)</span>
                 </p>
             </div>
-            <div class="quantity-container d-flex gap">
-                <p class="q-title">Quantity: </p>
-                <div class="count-container d-flex align-center gap">
-                    <button class="count">-</button>
-                    <span class="count-value">1</span>
-                    <button class="count">+</button>
+            <div className="quantity-container d-flex gap">
+                <p className="q-title">Quantity: </p>
+                <div className="count-container d-flex align-center gap">
+                    <button className="count"  onClick={() => handleDecrement(id)}  disabled={quantity === 1} >-</button>
+                    <span className="count-value">{quantity}</span>
+                    <button className="count"   onClick={() => handleIncrement(id)}>+</button>
                 </div>
             </div>
-            <div class="cta-btn d-flex gap">
-                <div class="cta-btn">
-                    <button class="button hori-btn btn-primary btn-icon d-flex align-center justify-center gap cursor btn-margin">Add to Cart</button>
+            <div className="cta-btn d-flex gap">
+                <div className="cta-btn">
+                    <button className="button hori-btn btn-primary btn-icon d-flex align-center justify-center gap cursor btn-margin">Add to Cart</button>
                 </div>
-                <div class="cta-btn">
-                    <button class="button hori-btn btn-outline-primary btn-icon d-flex align-center justify-center gap cursor btn-margin">
+                <div className="cta-btn">
+                    <button className="button hori-btn btn-outline-primary btn-icon d-flex align-center justify-center gap cursor btn-margin">
                     Move to ❤️</button>
                 </div>
             </div>

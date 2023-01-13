@@ -1,11 +1,26 @@
-import React from 'react';
-import { Navbar } from '../../components'
+import React, { Fragment } from 'react';
+import { Navbar, HorizontalProductCard } from '../../components';
+import { useCart } from '../../context/cart-context';
 import './Cart.css';
 
-const Cart = () => {
+export const Cart = () => {
+
+  const { cart } = useCart();
+
   return (
-    <Navbar />
+    <Fragment>
+      <Navbar />
+      <main className='main'>
+        {
+          cart && cart.length > 0 ? <h2>Your Cart has ({cart.length}) items </h2> : <h2>Your Cart is Empty</h2>
+        }
+        <div  className='main-cart d-flex direction-column gap'> 
+          {
+            cart && cart.length > 0 ? cart.map(product => <HorizontalProductCard  key={product.id}  product={product} />) : ''
+          } 
+        </div>
+      </main>
+    </Fragment>
   )
 }
 
-export default Cart
