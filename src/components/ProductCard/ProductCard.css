@@ -80,9 +80,13 @@
     background: transparent;
 }
 
-.cursor:hover {
+.button:hover {
     cursor: pointer;
     opacity: .85;
+}
+
+.cursor:hover {
+    cursor: pointer;
 }
 
 .btn-primary {

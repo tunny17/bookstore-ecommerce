@@ -2,7 +2,7 @@ import React from 'react'
 import './ProductCard.css'
 import { AiFillStar } from 'react-icons/ai'
 
-const ProductCard = ({product}) => {
+export const ProductCard = ({product}) => {
 
     const { id, name, image, discount, oldPrice, newPrice, rating  } = product
 
@@ -37,5 +37,3 @@ const ProductCard = ({product}) => {
     </div>
   )
 }
-
-export default ProductCard

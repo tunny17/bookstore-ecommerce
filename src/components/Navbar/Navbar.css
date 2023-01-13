@@ -9,6 +9,7 @@
 .navigation {
     width: 10%;
 }
+
 ul {
     list-style-type: none;
     width: 90%;
@@ -25,3 +26,11 @@ ul a
     color: #fff;
 }
 
+/* --- utility classes */
+.link {
+    text-decoration: none;
+    color: #fff;
+}
+.font-weight-sm {
+    font-weight: 600;
+}

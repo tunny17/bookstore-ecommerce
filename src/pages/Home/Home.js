@@ -2,8 +2,8 @@ import React, { Fragment, useEffect, useState } from 'react';
 import './Home.css';
 
 // local imports
-import Navbar from '../../components/Navbar/Navbar';
-import ProductCard from '../../components/ProductCard/ProductCard';
+import { Navbar } from '../../components/Navbar/Navbar';
+import { ProductCard } from '../../components/ProductCard/ProductCard';
 
 // dependency import
 import axios from 'axios';
