@@ -1,4 +1,5 @@
 .card {
+    width: 16rem;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -41,11 +42,11 @@
 .card-price {
     font-weight: bold;
     font-size: 1rem;
-    gap: 4px;
+    gap: 8px;
 }
 .price-strike-through,
 .discount {
-    font-size: .870rem;
+    font-size: 11px;
 }
 .price-strike-through {
     text-decoration-line: line-through;
