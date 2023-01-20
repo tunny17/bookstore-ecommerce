@@ -4,7 +4,7 @@ import { useCart } from '../../context/cart-context'
 
 export const HorizontalProductCard = ({product}) => {
 
-  const { id, name, image, discount, oldPrice, newPrice, rating, quantity  } = product;
+  const { id, name, image, discount, oldPrice, newPrice, quantity  } = product;
 
   const { cartDispatch } = useCart();
 
